@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/sum',  function(req, res, next) {
-  var num1 = parseInt(req.param('num1', 0), 10);
-  var num2 = parseInt(req.param('num2', 0), 10);
+  var num1 = parseFloat(req.param('num1', 0), 10);
+  var num2 = parseFloat(req.param('num2', 0), 10);
   var sum = plus(num1, num2)
   res.header("content-type", "application/json; charset=utf-8")
   res.end(JSON.stringify({
